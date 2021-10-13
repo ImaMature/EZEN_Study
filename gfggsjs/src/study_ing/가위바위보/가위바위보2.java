@@ -33,6 +33,10 @@ public class 가위바위보2 {
 				break;
 			}
 			
+			else if(playerCh<0 && playerCh>3) {
+				System.out.println("잘못된 입력입니다. 0~3 사이의 값을 입력해주세요.");
+			}
+			
 			Random random = new Random();
 			cpu = random.nextInt(3);
 			//System.out.println("컴퓨터가 낸수 : " + cpu);
