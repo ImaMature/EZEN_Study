@@ -1,0 +1,39 @@
+1. String 객체를 배열에 집어넣기
+예시)
+	String coffeeType;
+	String coffeePrice;
+	String coffeeStock;
+	객체 3개 선언
+	
+// 8. 현재 커피 리스트를 출력하는 메소드입니다.
+	public static void adminCoffeeList() {
+		for (int i = 0; i < project_Main.coffeeList.length; i++) {
+			if (project_Main.coffeeList[i] != null) {
+				System.out.println("커피 이름 : " + project_Main.coffeeList[i].coffeeType);
+				System.out.println("커피 가격 : " + project_Main.coffeeList[i].coffeePrice);
+				System.out.println("커피 재고 : " + project_Main.coffeeList[i].coffeeStock);
+			}
+		}
+	}
+	
+정리 : 외부 클래스의 배열을 반복문으로 출력하기
+for (int i = 0; i < 외부클래스명.해당 배열명.length; i++) {
+	if
+
+
+String 타입의 객체들을 배열에 순서대로 집어넣기
+외부클래스명.배열명[i].해당객체	"."을사용한다.
+
+
+2. 반복문 제어
+
+boolean(객체)=true;
+while(객체){
+내용;
+ 객체 = false;}
+ 
+ boolean(false)가 되므로 반복문 중지하고 그전 명령으로 이동
+
+ 
+ 3. 자바에서 사용되는 void란?
+ void의 역할은 return 되는 타입이 없음을 의미합니다. 즉 아무것도 리턴하지 않음을 선언해주는 것과 같습니다. 
