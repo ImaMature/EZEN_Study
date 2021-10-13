@@ -26,7 +26,7 @@ public class Day10_6 {
 		anonymous2.method1();
 		anonymous2.method2(new Vehicle(){
 			public void run() {
-				System.out.println();
+				System.out.println("트럭이 달립니다.");
 				}
 			}
 		);

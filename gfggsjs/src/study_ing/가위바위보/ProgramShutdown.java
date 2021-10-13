@@ -19,7 +19,7 @@ public class ProgramShutdown extends Main_menu{
 		else if (ch2.equals("n")) {
 			System.out.println("게임을 계속 진행합니다.");
 			System.out.println("----------------\n"); flag2 = false;
-			 // return은 언제쓰이는지
+			 // return은 언제쓰이는지 = void일때
 			}
 		else {System.out.println("잘못된 입력입니다.");}
 		}

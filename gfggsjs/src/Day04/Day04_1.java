@@ -26,9 +26,10 @@ public class Day04_1 {
 				// .nextInt(숫자) : 0~숫자전까지 난수
 				// .nextInt(10) + 초기값
 		Random random =	new Random(); // 난수 객체 생성 Scanner처럼 사용
-			//System.out.println(random.nextInt(10)); // 1~9까지 난수 생성, 10은 안나옴
+			System.out.println(random.nextInt(10));
+			// 0~9까지 난수 생성, 10은 안나옴
 			//System.out.println(random.nextInt(10) + 1); // 1~10까지 난수 생성
-			System.out.println(random.nextInt(10) + 4); // 4~13까지 난수 생성
+			//System.out.println(random.nextInt(10) + 4); // 4~13까지 난수 생성
 		
 //		System.out.println(random.nextInt());
 //		System.out.println(random.nextDouble()); //소숫점자리까지 생성
