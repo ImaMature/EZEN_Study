@@ -41,7 +41,7 @@ public class Day11_4 {//class start
 			
 		
 		//p. 499
-			//문자 추출(chartAt())
+			//2. 문자 추출(chartAt())
 			String ssn = "010624-1230123";
 			char sex = ssn.charAt(7); //문자열에도 인덱스가 존재함. 여기서는 1
 			//인덱스를 넣으면 해당위치에 있는 문자열을 빼온다.
@@ -55,7 +55,7 @@ public class Day11_4 {//class start
 			}
 			
 		//p. 500
-			//문자열 비교
+			//3. 문자열 비교
 				//문자열 비교할 때 '=='연산자를 사용하면 원하지 않는 결과가 나올 수 있다.
 			String strVar1 = new String ("신민철") ;
 			String strVar2 = "신민철";
@@ -87,7 +87,7 @@ public class Day11_4 {//class start
 					//2. EUC-KR [CP-949] : 영문, 한글
 			
 		//p.504
-			// indexOf() : 문자열 찾기 [ 인수 : 찾을 문자열 / 반환 : 찾은 인덱스의 위치 / 찾은 게 없으면 : -1 ]
+			//5. indexOf() : 문자열 찾기 [ 인수 : 찾을 문자열 / 반환 : 찾은 인덱스의 위치 / 찾은 게 없으면 : -1 ]
 			String subject = "자바 프로그래밍";
 			System.out.println(subject.indexOf("프로그래밍")); // 출력값 : 3
 			//프로그래밍 문자열의 인덱스위치가 3이라 3출력
@@ -98,9 +98,17 @@ public class Day11_4 {//class start
 			}
 			else {System.out.println("자바와 관련없는 책입니다.");
 			}
-		
+			//5-2. contains 문자열 찾기 (인수 : 찾을 문자열 / 반환 : ture or false)
+			//subject.contains(s);
+			System.out.println(subject.contains("자바")); //true
+			
+			//contains와 indexOf의 차이
+			//contains는 대상 문자열에 특정 문자열이 포함되어 있는지 확인하여 true나 false값을 출력
+			//indexOf는  대상 문자열에 특정 문자열이 포함되어 있는지 확인하여 인덱스 위치 출력
+			
+			
 		//p.505
-			//length() : 문자열의 길이
+			//6. length() : 문자열의 길이
 			System.out.println(subject.length());	//8칸(공백포함) : 인덱스 0~7
 		
 		//p.506 
@@ -123,7 +131,7 @@ public class Day11_4 {//class start
 			System.out.println(ssn3[1]);
 			
 		//p.508 
-			//10. toLower() : 모두 소문자로 변환		toUpper() : 모두 대문자로 변환
+			//10. toLowerCase() : 모두 소문자로 변환		toUpperCase() : 모두 대문자로 변환
 			String str3 = "Java Programming";
 			System.out.println(str3.toLowerCase()); // 다 소문자로 출력
 			System.out.println(str3.toUpperCase()); // 다 대문자로 출력
