@@ -42,7 +42,7 @@ public class Member3 implements Cloneable{
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("name : " + this.name);
 		System.out.println("age : " + this.age);
 		System.out.println("array : " + this.scores);

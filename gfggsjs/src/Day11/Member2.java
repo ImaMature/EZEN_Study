@@ -23,7 +23,7 @@ public class Member2 implements Cloneable{
 	public Member2 getMember2() {
 		Member2 cloned = null; //빈 변수 생성
 		try {
-			cloned = (Member2)clone(); //형변환
+			cloned = (Member2)clone(); //일반 예외 발생 형변환
 			// 해당 메소드를 호출한 객체를 복제
 			// clone(); 사용시 Clonable 인터페이스 생성
 		} catch (CloneNotSupportedException e) {}
