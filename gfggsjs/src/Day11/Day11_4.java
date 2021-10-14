@@ -18,7 +18,7 @@ public class Day11_4 {//class start
 			//1_ 바이트 배열에 정수 저장
 			byte[] bytes = {72, 101, 108, 108, 111, 32, 74, 97, 118, 97};
 					//유니코드: H   e    l    l    o  sp(띄어쓰기)    j   a    v    a
-			
+												//space	
 			//2_ 바이트 배열을 String 생성자에 넣기
 			String str1 = new String(bytes);
 			System.out.println(str1); // Hello java
