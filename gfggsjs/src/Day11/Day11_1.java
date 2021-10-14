@@ -34,7 +34,7 @@ public class Day11_1 {
 //						value = Integer.parseInt(strArray[i]);		
 //					}												
 //					//i == 0 => strArray[0] => 예외 발생 X => 예외가 없기 때문에 finally로 이동 => 10 출력	
-//					//i == 1 => strArray[1] => 예외 발생 O(a10=문자열이기 때문) => finally로 이동 => value = 0 catch문으로 이동 => NumberFormatException e로 이동 => 숫자로변환할 수 없음 출력
+//					//i == 1 => strArray[1] => 예외 발생 O(a10=문자열이기 때문) => finally로 이동 => value = 10출력, 예외도 발생 발생한 예외는 catch문으로 이동 => NumberFormatException e로 이동 => 숫자로변환할 수 없음 출력
 //					//i == 2 => strArray[2] => 인덱스 없음 => 예외발생 => finally 출력 10 value는 = 10
 //					catch (ArrayIndexOutOfBoundsException e) {
 //						System.out.println("인덱스르 초과했음");
@@ -92,4 +92,4 @@ public class Day11_1 {
 //	Exception이 예외클래스의 부모클래스이므로 message내용을 main메소드의 Exception으로 전달 throws를 통해서 예외 던지기
 //8. catch에서 잡아서  e에 메시지 저장
 //9. e.getmessage로 e에 저장된 "아이디가 존재하지 않습니다." 출력
-
+//10. 
