@@ -1,6 +1,6 @@
 package Day10;
 
-public class Vehicle {
+public interface Vehicle {
 
 	public void run();
 }
