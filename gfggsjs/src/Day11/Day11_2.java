@@ -53,7 +53,7 @@ public class Day11_2 {
 			//3-3. 깊은 복제
 				//1) 객체 생성
 				Member3 original2 = new Member3("홍길동", 25, new int [] {90, 90}, new Car("소나타"));
-			
+					// original에는"blue", "홍길동", "12345", 25, true 값이 각각 들어있음
 				//2)깊은 복제
 				Member3 cloned2 = original2.getMember3();
 				cloned2.scores[0] = 100;
@@ -66,7 +66,7 @@ public class Day11_2 {
 				
 				// finalize() : 객체 소멸자 
 				cloned2 = null; // 해당 객체가 null
-				System.gc(); // 자동실행
+				System.gc(); // 자동실행	//gc = 쓰레기 수집기 -> 쓰레기 객체의 정보를 얻을때 사용 p.482~483
 					// null 객체는 힙 메모리
 						// 스택 : 변수명,주소값  
 						// 힙 : 값 
