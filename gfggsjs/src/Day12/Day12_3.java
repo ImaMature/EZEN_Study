@@ -1,6 +1,9 @@
 package Day12;
 
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Day12_3 {
@@ -8,7 +11,7 @@ public class Day12_3 {
 	
 		//p.539
 			//Date 클래스 : 시스템 날짜/시간
-			Date date = new Date();
+			Date date = new Date(); //import java.util.Date;
 			System.out.println(date);
 			System.out.println(date.toString());
 			//simpleDateFormat : 날짜 형식 ( 모양 꾸미기 )
@@ -16,5 +19,54 @@ public class Day12_3 {
 															//y:연도, M:월, d:일, h:시, s:초
 			//형식 적용
 			System.out.println(dateFormat.format(date));
+			
+			// p.540
+			//< Calender 클래스 >: 운영체제 시간대의 날짜/시간에 대한 정보
+			
+			Calendar now = Calendar.getInstance(); // import java.util.Calendar; 기존에 있는 객체를 가져오기
+			//int year = now.get(Calendar.MONTH) +1;	// 0 ~ 11 [1월 : 0]
+			System.out.println("연도 : " + now.get(Calendar.YEAR));
+			System.out.println("월 : " + now.get(Calendar.MONTH) + 1);
+									//+:연결연산자			//+:더하기 연산자
+			System.out.println("일 : " + now.get(Calendar.DAY_OF_MONTH));
+			System.out.println("요일 : " + now.get(Calendar.DAY_OF_WEEK));
+									//1:일요일 2:월요일 3:화요일 4:수요일 5:목요일 6:금요일 7:토요일
+			
+			
+			int week = now.get(Calendar.DAY_OF_WEEK); //컴퓨터는 문자를 몰라서 숫자로 접근하는 객체 선언 "." 빼내오는 연산자
+			String strWeek = null; //null값을 strweek에 저장해서 strWeek를 초기화
+			switch (week) {
+			case Calendar.SUNDAY : strWeek = "일"; break;
+			case Calendar.MONDAY : strWeek = "월"; break;
+			case Calendar.TUESDAY : strWeek = "화"; break;
+			case Calendar.WEDNESDAY : strWeek = "수"; break;
+			case Calendar.THURSDAY : strWeek = "목"; break;
+			case Calendar.FRIDAY : strWeek = "금"; break;
+			case Calendar.SATURDAY : strWeek = "토"; break;
+		}	
+			System.out.println("요일 : " + strWeek);
+			
+			// 숫자를 문자열로 나오도록하기
+			System.out.println("오전/오후 : " + now.get(Calendar.AM_PM)); // 0 = 오전, 1 = 오후
+			int ampm = now.get(Calendar.AM_PM);
+			String strampm = null;
+			if( ampm == Calendar.AM) {strampm = "오전";}
+			else { strampm = "오후";}
+			System.out.println("오전/오후 : " + strampm);
+			
+			System.out.println("시 : " + now.get(Calendar.HOUR));
+			System.out.println("분 : " + now.get(Calendar.MINUTE));
+			System.out.println("초 : " + now.get(Calendar.SECOND));
+			
+			//협정시계
+			ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("UTC"));
+			System.out.println("협정시계 시간 : "+ zonedDateTime);
+			
+			zonedDateTime=ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
+			System.out.println("서울 시간 : " + zonedDateTime);
+			
+			zonedDateTime=ZonedDateTime.now(ZoneId.of("America/New_York"));
+			System.out.println("뉴욕시간 시간 : " + zonedDateTime);
+			
 	}
 }
