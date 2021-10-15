@@ -3,10 +3,11 @@ package Day12;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ran_dom1 {
+// 차량번호 랜덤 생성문제
+public class 차량번호분배 {
 	public static void main(String[] args) {
 		
-	
+	//1. 무한루프사용하기
 		Random random = new Random();
 		for(int i =0; i<10; i++) {
 			int carNumber1 = random.nextInt(10)+1;
