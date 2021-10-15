@@ -68,7 +68,7 @@ public class 회원목록_멤버 {
 					try {	
 						//for(Day12_회원목록_Member temp : Day12_회원목록_Main.members) {
 							//if (temp == null) break;  
-						//배열 돌리려면 객체 내보내기에서 member를 모두 temp로 바꿔야됨 그리고 파일 출력 객체에 끝에 ", true"지워야됨
+						//for문 이용하려면 객체 내보내기에서 member를 모두 temp로 바꿔야됨 그리고 파일 출력 객체에 끝에 ", true"지워야됨
 					
 					// 파일 출력 객체
 						FileOutputStream fileOutputStream = 
