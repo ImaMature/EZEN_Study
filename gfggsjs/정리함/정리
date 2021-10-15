@@ -62,10 +62,17 @@
 		Date 객체명 = new Date() : 현재 시스템 내 날짜/시간 객체
 		SimpleDateFormat
 	
-	7 Integer : 정수 클래스
+	7. Integer : 정수 클래스
 		.parseInt("문자열")	:	String -> int형
 		.toString(정수)		:	int -> String 형
 			*숫자 + ""		:	int + "" -> String
+	
+	8. Wrapper 포장 클래스 : 기본 자료형 -> 객체화
+		기본타입
+		1) Integer.parseInt
+		2) 
+		3)
+		4) 		
 
 [상속] 설계도의 연장
 
