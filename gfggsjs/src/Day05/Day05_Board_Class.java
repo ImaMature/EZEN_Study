@@ -52,7 +52,7 @@ public class Day05_Board_Class {
 						if( boards[i] == null) {
 							
 							Board board = new Board();// 해당 인덱스에 객체가 없으면
-							board.title = title; 	board.contents = contents; 
+							board.title = title; 	board.contents = contents; //입력받은 contents를 board 클래스의 contents에 저장(메모리에 저장)
 							board.writer = writer;	board.date = date; 		
 							board.count = 1;
 							
