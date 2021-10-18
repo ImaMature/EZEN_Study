@@ -18,7 +18,7 @@ public class 성적표 {
 
 		boolean run = true;
 		while(run) {
-			try {
+			try { 
 				학생명단 학생명단 = new 학생명단();
 				
 				System.out.println("1. 성적입력 | 2. 출력 | 3. 프로그램 종료.");	int ch = scanner.nextInt();

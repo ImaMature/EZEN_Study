@@ -17,13 +17,13 @@ public 학생명단() {};
 
 public 학생명단(int number, String name, int kor, int eng, int math, int total, double average) {
 	super();
-	this.number = number;
-	this.name = name;
-	this.kor = kor;
-	this.eng = eng;
-	this.math = math;
-	this.total = total;
-	this.average = average;
+	this.number = number; // 번호
+	this.name = name; // 이름
+	this.kor = kor; // 국어 성적
+	this.eng = eng; // 영어 성적
+	this.math = math; // 수학 성적
+	this.total = total; // 총점
+	this.average = average; //평균
 }
 
 
