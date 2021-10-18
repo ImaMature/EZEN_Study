@@ -3,34 +3,33 @@ package study_ing;
 import java.util.Arrays;
 
 public class 학생명단 {
-int 수;
-String 이름;
-int 국어점수;
-int 영어점수;
-int 수학점수;
-int 총점;
-double 평균;
+int number;
+String name;
+int kor;
+int eng;
+int math;
+int total;
+double average;
 
 public 학생명단() {};
 
 
 
-
-
-
-public 학생명단(int 수, String 이름, int 국어점수, int 영어점수, int 수학점수, int 총점, double 평균) {
+public 학생명단(int number, String name, int kor, int eng, int math, int total, double average) {
 	super();
-	this.수 = 수;
-	this.이름 = 이름;
-	this.국어점수 = 국어점수;
-	this.영어점수 = 영어점수;
-	this.수학점수 = 수학점수;
-	this.총점 = 총점;
-	this.평균 = 평균;
+	this.number = number;
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.math = math;
+	this.total = total;
+	this.average = average;
 }
 
 
 //무제한으로 입력받는 것은 list써도 되고. 석차는 정렬. try catch꼭
+
+
 
 public void inputGrade() {
 	
@@ -42,17 +41,17 @@ public void inputGrade() {
 	System.out.print("수학 성적 : ");	int math = 성적표.scanner.nextInt();
 	
 	//총합 (실수형)
-	int sum = 0;
-	sum = (kor + eng + math);
+
+	int sum = (kor + eng + math);
 	
 	//정수형변환 int 총합에 넣기 위해
-	int sum2 = 0;
-	sum2 = (int) sum;
+	
+	int sum2 = (int) sum;
 	
 	// 평균 구하기
-	double average = 0;
-	average = Math.round(((sum/3)*100)/100.0);
 	
+	double average = Math.round(((sum/3)*100)/100.0);
+	System.out.println(num+" "+name+" "+kor+" "+eng+" "+math+" "+sum+" "+sum2+" "+average);
 	
 		학생명단 list = new 학생명단(num, name, kor, eng, math, sum2, average);
 		for(int i = 0; i<성적표.arr.length; i++) {
@@ -75,82 +74,99 @@ public void outputGrade() {
 	System.out.println("--------------------------------------------------------------");
 	Arrays.sort(성적표.arr);
 	
+	int number = 1;
 	
-		for(int i= 1; i<성적표.arr.length;i++)
+		for(int i= 0; i<성적표.arr.length;i++)
 			if(성적표.arr[i] != null) {
 				학생명단 임시객체 = new 학생명단();
-				System.out.println(임시객체.getNum()+"\t"+임시객체.get이름()+"\t"+
-				임시객체.get국어점수()+"\t"+임시객체.get영어점수()+"\t"+임시객체.get수학점수()+"\t"+
-						임시객체.get총점()+"\t"+임시객체.get평균()+"\t"+ i++);
+				System.out.println(임시객체.getNumber()+"\t"+임시객체.getName()+"\t"+
+				임시객체.getKor()+"\t"+임시객체.getEng()+"\t"+임시객체.getMath()+"\t"+
+						임시객체.getTotal()+"\t"+임시객체.getAverage()+"\t"+ i++);
 			}
 }
 
-	public int getNum() {
-		return 수;
+
+
+	public int getNumber() {
+		return number;
 	}
 	
 	
-	public void setNum(int 수) {
-		this.수 = 수;
+	
+	public void setNumber(int number) {
+		this.number = number;
 	}
 	
 	
-	public String get이름() {
-		return 이름;
+	
+	public String getName() {
+		return name;
 	}
 	
 	
-	public void set이름(String 이름) {
-		this.이름 = 이름;
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	
-	public int get국어점수() {
-		return 국어점수;
+	
+	public int getKor() {
+		return kor;
 	}
 	
 	
-	public void set국어점수(int 국어점수) {
-		this.국어점수 = 국어점수;
+	
+	public void setKor(int kor) {
+		this.kor = kor;
 	}
 	
 	
-	public int get영어점수() {
-		return 영어점수;
+	
+	public int getEng() {
+		return eng;
 	}
 	
 	
-	public void set영어점수(int 영어점수) {
-		this.영어점수 = 영어점수;
+	
+	public void setEng(int eng) {
+		this.eng = eng;
 	}
 	
 	
-	public int get수학점수() {
-		return 수학점수;
+	
+	public int getMath() {
+		return math;
 	}
 	
 	
-	public void set수학점수(int 수학점수) {
-		this.수학점수 = 수학점수;
+	
+	public void setMath(int math) {
+		this.math = math;
 	}
 	
 	
-	public double get평균() {
-		return 평균;
+	
+	public int getTotal() {
+		return total;
 	}
 	
 	
-	public void set평균(double 평균) {
-		this.평균 = 평균;
+	
+	public void setTotal(int total) {
+		this.total = total;
 	}
 	
 	
-	public int get총점() {
-		return 총점;
+	
+	public double getAverage() {
+		return average;
 	}
 	
 	
-	public void set총점(int 총점) {
-		this.총점 = 총점;
+	
+	public void setAverage(double average) {
+		this.average = average;
 	}
+
 }

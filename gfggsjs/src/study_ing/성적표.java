@@ -11,8 +11,8 @@ public class 성적표 {
 	 * 5. 총점을 이용해 석차를 구하기
 	 * 6. 입력 오류에 대해 예외발생 상황에 대한 처리하기
 	 */
-	static Scanner scanner = new Scanner(System.in);
-	static 학생명단 [] arr = new 학생명단 [5];
+	public static Scanner scanner = new Scanner(System.in);
+	public static 학생명단 [] arr = new 학생명단 [5];
 	
 	public static void main(String[] args) {
 
