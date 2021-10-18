@@ -33,6 +33,7 @@ public 학생명단(int num, String 이름, int 국어점수, int 영어점수, int 수학점수, 
 
 
 public void inputGrade() {
+	while(true) {
 	System.out.println("성적 입력하기."); 
 	System.out.print("번호 : ");	int num = 성적표.scanner.nextInt();
 	System.out.print("이름 : ");	String name = 성적표.scanner.next();
@@ -53,11 +54,12 @@ public void inputGrade() {
 	average = Math.round(((sum/3)*100)/100.0);
 	
 	
-	학생명단 list = new 학생명단(num, name, kor, eng, math, sum2, average);
-	for(int i = 0; i<성적표.arr.length; i++) {
-		if(성적표.arr[i] == null) {
-		성적표.arr[i] =list;
-		break;
+		학생명단 list = new 학생명단(num, name, kor, eng, math, sum2, average);
+		for(int i = 0; i<성적표.arr.length; i++) {
+			if(성적표.arr[i] == null) {
+			성적표.arr[i] =list;
+			break;
+			}
 		}
 	}
 }
@@ -83,144 +85,72 @@ public void outputGrade() {
 			}
 }
 
-
-
-
-
-
-
-
-public int getNum() {
-	return num;
-}
-
-
-
-
-
-
-public void setNum(int num) {
-	this.num = num;
-}
-
-
-
-
-
-
-public String get이름() {
-	return 이름;
-}
-
-
-
-
-
-
-public void set이름(String 이름) {
-	this.이름 = 이름;
-}
-
-
-
-
-
-
-public int get국어점수() {
-	return 국어점수;
-}
-
-
-
-
-
-
-public void set국어점수(int 국어점수) {
-	this.국어점수 = 국어점수;
-}
-
-
-
-
-
-
-public int get영어점수() {
-	return 영어점수;
-}
-
-
-
-
-
-
-public void set영어점수(int 영어점수) {
-	this.영어점수 = 영어점수;
-}
-
-
-
-
-
-
-public int get수학점수() {
-	return 수학점수;
-}
-
-
-
-
-
-
-public void set수학점수(int 수학점수) {
-	this.수학점수 = 수학점수;
-}
-
-
-
-
-
-
-public double get평균() {
-	return 평균;
-}
-
-
-
-
-
-
-public void set평균(double 평균) {
-	this.평균 = 평균;
-}
-
-
-
-
-
-
-public int get총점() {
-	return 총점;
-}
-
-
-
-
-
-
-public void set총점(int 총점) {
-	this.총점 = 총점;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	public int getNum() {
+		return num;
+	}
+	
+	
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+	
+	public String get이름() {
+		return 이름;
+	}
+	
+	
+	public void set이름(String 이름) {
+		this.이름 = 이름;
+	}
+	
+	
+	public int get국어점수() {
+		return 국어점수;
+	}
+	
+	
+	public void set국어점수(int 국어점수) {
+		this.국어점수 = 국어점수;
+	}
+	
+	
+	public int get영어점수() {
+		return 영어점수;
+	}
+	
+	
+	public void set영어점수(int 영어점수) {
+		this.영어점수 = 영어점수;
+	}
+	
+	
+	public int get수학점수() {
+		return 수학점수;
+	}
+	
+	
+	public void set수학점수(int 수학점수) {
+		this.수학점수 = 수학점수;
+	}
+	
+	
+	public double get평균() {
+		return 평균;
+	}
+	
+	
+	public void set평균(double 평균) {
+		this.평균 = 평균;
+	}
+	
+	
+	public int get총점() {
+		return 총점;
+	}
+	
+	
+	public void set총점(int 총점) {
+		this.총점 = 총점;
+	}
 }
