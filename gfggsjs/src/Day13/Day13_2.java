@@ -22,7 +22,17 @@ public class Day13_2 {
 			//4.스레드 시작
 			thread.start(); //start가 있어야 int = 0 반복문 가능
 		}
-		//스레드 메소드 동기화 
+		//스레드 메소드 동기화
+			// 동기화는 : 여러 스레드가 동일한 메소드에 접근할 때 먼저 접근한 메소드부터 처리
+			//			나머지는 대기
+			// 동기화 안하면? 엉터리값을 이용하게 되어 의도와 다른 값이 나올 수 있음.
+		Calculator calculator = new Calculator();
+		User1 user1 = new User1();
+		user1.setCalculator(calculator);
+		user1.start();
 		
+		User2 user2 = new User2();
+		user2.setCalculator(calculator);
+		user2.start();
 	}
 }

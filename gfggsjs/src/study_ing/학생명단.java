@@ -3,7 +3,7 @@ package study_ing;
 import java.util.Arrays;
 
 public class 학생명단 {
-int num;
+int 수;
 String 이름;
 int 국어점수;
 int 영어점수;
@@ -18,9 +18,9 @@ public 학생명단() {};
 
 
 
-public 학생명단(int num, String 이름, int 국어점수, int 영어점수, int 수학점수, int 총점, double 평균) {
+public 학생명단(int 수, String 이름, int 국어점수, int 영어점수, int 수학점수, int 총점, double 평균) {
 	super();
-	this.num = num;
+	this.수 = 수;
 	this.이름 = 이름;
 	this.국어점수 = 국어점수;
 	this.영어점수 = 영어점수;
@@ -30,10 +30,10 @@ public 학생명단(int num, String 이름, int 국어점수, int 영어점수, int 수학점수, 
 }
 
 
-
+//무제한으로 입력받는 것은 list써도 되고. 석차는 정렬. try catch꼭
 
 public void inputGrade() {
-	while(true) {
+	
 	System.out.println("성적 입력하기."); 
 	System.out.print("번호 : ");	int num = 성적표.scanner.nextInt();
 	System.out.print("이름 : ");	String name = 성적표.scanner.next();
@@ -59,7 +59,7 @@ public void inputGrade() {
 			if(성적표.arr[i] == null) {
 			성적표.arr[i] =list;
 			break;
-			}
+			
 		}
 	}
 }
@@ -86,12 +86,12 @@ public void outputGrade() {
 }
 
 	public int getNum() {
-		return num;
+		return 수;
 	}
 	
 	
-	public void setNum(int num) {
-		this.num = num;
+	public void setNum(int 수) {
+		this.수 = 수;
 	}
 	
 	
