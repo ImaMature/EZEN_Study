@@ -22,6 +22,8 @@ public class player {
 //   . 
 //   .
 //음악재생
+//Music, Movie 클래스와 관련	
+	
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -30,7 +32,7 @@ public class player {
 		boolean sw = true; // 현재 재생 여부 확인 변수
 		boolean sw2 = true; // true라면 중지상태 //false이면 실행
 		
-		while(true) {
+		while(true) { // 무한루프
 			 
 			System.out.println("1. 음악재생 | 2. 영화재생"); 
 			int ch = sc.nextInt();
