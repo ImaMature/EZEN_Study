@@ -27,5 +27,24 @@ public class Day13_4 { //자식 클래스
 		box22.set(6);
 		int value = box22.get();
 		
+		
+		
+		//---------------------------------------
+		
+		//멀티 제네릭
+		// 자료형에 따른 매개변수로 클래스를 바꿀 수 있다.
+		Product<Tv, String> product1 = new Product<>(); //T = Tv, M = String값
+		product1.setKind(new Tv());
+		product1.setModel("스마트 TV"); //String 값 세팅하기
+		Tv tv = product1.getKind();
+		String tvModel = product1.getModel();
+		
+		Product<Car, String> product2 = new Product<>();
+		product2.setKind(new Car());
+		product2.setModel("디젤");
+		Car car = product2.getKind();
+		String carmodel = product2.getModel();
+		
+		
 	}
 }
