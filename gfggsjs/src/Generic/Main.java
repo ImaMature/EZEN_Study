@@ -30,6 +30,8 @@ public class Main {
 			} else if(age > 20) {
 				Adult.add(new Adult(name, age));
 			}
+			
+			//출력만들기만 하면 됨
 		}
 	}
 
