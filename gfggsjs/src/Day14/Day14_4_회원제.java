@@ -1,6 +1,7 @@
 package Day14;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class Day14_4_회원제 {
 					
 			//0-2-2. 회원 구분하기 //split (기준) 분리 -> 배열
 					String [] usernum = inString.split("\n");
-			//0.2-3. 필드 구분하기
+			//0.2-3. 필드 구분하기 //반복문 사용
 					for(String temp: usernum) {
 						
 						String[] userdata = temp.split(","); //userdata에 저장되어있는 값들을" ," 으로 나눔
@@ -117,15 +118,50 @@ public class Day14_4_회원제 {
 							System.out.println("수정할 성명 : "); String newName = scanner.next();
 							//2. set 메소드를 통한 필드 값 변경
 							temp.setName(newName); // 기존에 저장된 이름을 입력받은 이름으로 변경
-							//3. 파일 업데이트 처리
-							
+							//3. 파일 업데이트 처리 (메소드로 처리하기 아직 안배움)
+								//1) 리스트 내 모든 회원 저장 [ 업데이트 ] 
+							try {
+									// 1-1)파일 출력 객체 생성 [ 파일경로 ]
+								FileOutputStream fileOutputStream = new FileOutputStream("C:/Users/505/git/EZEN_Study/gfggsjs/src/Day14/userlist.txt"); 
+								//새로쓰기를 해야돼서 끝에 true 빼야됨
+								
+									// 1-2) 모든 회원의 정보 저장
+								String outString = ""; // 모든 회원의 정보를 담을 문자열
+								for(User temp2 : users) {
+									// 회원 분류
+									String outTemp = temp2.getId()+","+temp2.getPassword()+","+temp2.getName()+"\n";
+									// 분류된 정보를 모든 회원 문자열에 추가
+									outString += outTemp;
+								}
+								// 모든 회원 내보내기
+								fileOutputStream.write(outString.getBytes());
+							} catch (Exception e) { //Exception 이어야됨
+								
+							}
 						}
 						else if(ch2==3) {
 							//1. 리스트에서 객체 삭제
 							users.remove(temp);
 							System.out.println("[[회원탈퇴 : 로그아웃]]");
-							//파일 업데이트 처리
+							//파일 업데이트 처리 (메소드화 해보기)
+							try {
+								// 1-1)파일 출력 객체 생성 [ 파일경로 ]
+							FileOutputStream fileOutputStream = new FileOutputStream("C:/Users/505/git/EZEN_Study/gfggsjs/src/Day14/userlist.txt"); 
+							//새로쓰기를 해야돼서 끝에 true 빼야됨
 							
+								// 1-2) 모든 회원의 정보 저장
+							String outString = ""; // 모든 회원의 정보를 담을 문자열
+							for(User temp2 : users) {
+								// 회원 분류
+								String outTemp = temp2.getId()+","+temp2.getPassword()+","+temp2.getName()+"\n";
+								// 분류된 정보를 모든 회원 문자열에 추가
+								outString += outTemp;
+							}
+							// 모든 회원 내보내기
+							fileOutputStream.write(outString.getBytes());
+						} catch (Exception e) { //Exception 이어야됨
+							
+						}
 							break; // 회원탈퇴하고 첫화면으로
 						}
 						else if(ch2==4) {
