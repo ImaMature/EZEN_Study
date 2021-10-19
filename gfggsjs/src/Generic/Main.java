@@ -16,10 +16,11 @@ public class Main {
 		AgeList<Lowage> LowAge = new AgeList<>("유아", 5);
 		
 		while(true) {
-			String name = sc.next();
+			
 			System.out.println("이름 : ");
-			int age = sc.nextInt();
+			String name = sc.next();
 			System.out.println("나이 : ");
+			int age = sc.nextInt();
 			
 			agelist.add(name, age);
 			
@@ -29,7 +30,7 @@ public class Main {
 				MiddleAge.add(new MiddleAge(name, age));
 			} else if(age > 20) {
 				Adult.add(new Adult(name, age));
-			}
+			}System.out.println("잘못된 정보입니다."); break;
 			
 			//출력만들기만 하면 됨
 		}
