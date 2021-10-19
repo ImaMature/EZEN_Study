@@ -103,7 +103,35 @@ public class Day14_4_회원제 {
 				for(User temp : users) {
 					if(temp.getId().equals(id) && temp.getPassword().equals(pw)) { //getID, getPassword : 이클립스에 있는 메소드
 						System.out.println("로그인 성공");
-						logincheck = false; break;
+						logincheck = false; 
+						
+						////////////////////////////////로그인 성공시////////////////////////////////
+						System.out.println("1. 회원정보 | 2. 회원수정 | 3. 회원탈퇴 | 4. 로그아웃");
+						int ch2 = scanner.nextInt();
+						if(ch2==1) {
+							System.out.println("아이디 : " + temp.getId());
+							System.out.println("성명 : " + temp.getName());
+						}
+						else if(ch2==2) {
+							//1. 수정할 정보 입력
+							System.out.println("수정할 성명 : "); String newName = scanner.next();
+							//2. set 메소드를 통한 필드 값 변경
+							temp.setName(newName); // 기존에 저장된 이름을 입력받은 이름으로 변경
+							//3. 파일 업데이트 처리
+							
+						}
+						else if(ch2==3) {
+							//1. 리스트에서 객체 삭제
+							users.remove(temp);
+							System.out.println("[[회원탈퇴 : 로그아웃]]");
+							//파일 업데이트 처리
+							
+							break; // 회원탈퇴하고 첫화면으로
+						}
+						else if(ch2==4) {
+							System.out.println("[[로그아웃]]"); break; //로그아웃
+						}
+						break;//
 					}
 				}
 				if(logincheck) {System.out.println("[[동일한 회원 정보가 없습니다.]]");}
