@@ -62,7 +62,7 @@ public class Day14_3 {
 		for(String temp : list) { // 리스트 안에 들어있는 자료형만 써야됨
 			//for(임시객체 : 리스트) -> 리스트 내 모든 객체를 하나씩 임시 객체에 대입
 			System.out.println(temp);
-			
+		}
 			
 		//6) 리스트내 객체 삭제
 		list.remove(2); //Database 삭제 => 삭제후 => servlet/jsp 객체가 2번 인덱
@@ -70,10 +70,13 @@ public class Day14_3 {
 		list.remove(2);
 		System.out.println("삭제 확인 : " + list);
 		
+		//7) 검색
+		System.out.println(list.contains("java"));
 		System.out.println(list.contains("java"));
 		
+		//8) 리스트 초기화
 		list.clear(); // 모든 객체 삭제
 		
-		}
+		
 	}
 }
