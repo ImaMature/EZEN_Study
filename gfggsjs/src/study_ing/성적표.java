@@ -1,5 +1,6 @@
 package study_ing;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class 성적표 {
@@ -12,36 +13,24 @@ public class 성적표 {
 	 * 6. 입력 오류에 대해 예외발생 상황에 대한 처리하기
 	 */
 	public static Scanner scanner = new Scanner(System.in);
-	public static 학생명단 [] arr = new 학생명단 [5];
-	
+	static ArrayList<Students> studentList = new ArrayList<>();	
 	public static void main(String[] args) {
 
-		boolean run = true;
-		while(run) {
-			try { 
-				학생명단 학생명단 = new 학생명단();
-				
-				System.out.println("1. 성적입력 | 2. 출력 | 3. 프로그램 종료.");	int ch = scanner.nextInt();
-				switch ( ch ) {
-				case 1:
-					System.out.println("성적을 입력하는 화면 입니다.");;
-					학생명단.inputGrade();
-					break;
-				case 2:
-					System.out.println("입력된 성적을 출력하는 화면 입니다.");
-					학생명단.outputGrade();
-					break;
-				case 3:
-					System.out.println("프로그램 종료.");
-					run = false;
-					break;
-				}
-				
-				
-			} catch(Exception e){ 
-				System.out.println("에러 발생! 관리자에게 문의해 주세요." +"\n[에러내용: "+ e +"]");
-				break;
+		while(true) {
+			System.out.println("-------성적표 프로그램 입니다.-------");
+			System.out.println("1. 입력하기 2. 종료"); int ch = scanner.nextInt();
+			if(ch == 1 ) {
+			System.out.print("번호 입력하기 >"); int num = scanner.nextInt();
+			System.out.print("이름 입력하기 >"); String name = scanner.next();
+			System.out.print("국어 성적 입력하기 >"); int kor = scanner.nextInt();
+			System.out.print("영어 성적 입력하기 >"); int eng = scanner.nextInt();
+			System.out.print("수학 성적 입력하기 >"); int math = scanner.nextInt();
+			
+			Students students = new Students(num, name, kor, eng, math);
+			studentList.add(students);
 			}
+			
+			
 		}//while end
 	}//main end
 }//class end
