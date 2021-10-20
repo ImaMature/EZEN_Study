@@ -2,13 +2,17 @@ package study_ing;
 
 
 
-public class Students extends 己利钎{
+public class Students extends 己利钎 implements Comparable<Students>{
 
-	int num;
-	String name;
-	int kor;
-	int eng;
-	int math;
+	
+	private int num;
+	private String name;
+	private int kor;
+	private int eng;
+	private int math;
+	private int total;
+	private double ave;
+	private int rank;
 	
 	public Students() {}
 	
@@ -19,7 +23,14 @@ public class Students extends 己利钎{
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
+		
 	}
+	
+	
+	
+	
+	
+	
 
 	public int getNum() {
 		return num;
@@ -61,6 +72,37 @@ public class Students extends 己利钎{
 		this.math = math;
 	}
 
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public double getAve() {
+		return ave;
+	}
+
+	public void setAve(double ave) {
+		this.ave = ave;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	@Override
+	public int compareTo(Students o) {
+		if(total<o.total) return 1;
+		else if(total == o.total) return 0;
+		else return -1;
+	}
+	
 	
 	
 	

@@ -1,7 +1,11 @@
 package study_ing;
 
-import java.util.ArrayList;
+
+
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class 성적표 {
 	/*
@@ -12,40 +16,80 @@ public class 성적표 {
 	 * 5. 총점을 이용해 석차를 구하기
 	 * 6. 입력 오류에 대해 예외발생 상황에 대한 처리하기
 	 */
-	public static Scanner scanner = new Scanner(System.in);
-		
+	
+	
+	 
 	public static void main(String[] args) {
-	ArrayList<Students> studentList = new ArrayList<>();
-
-		while(true) {
+		
+		TreeSet<Students> studentList = new TreeSet<>();
+		
+		boolean flag = true;
+		while(flag) {
+			Scanner scanner = new Scanner(System.in);
+			try {
 			System.out.println("-------성적표 프로그램 입니다.-------");
-			System.out.println("1. 입력하기 2. 성적 출력 3. 종료"); int ch = scanner.nextInt();
-			if(ch == 1 ) {
-				
-				boolean flag = true;
-				for(int i =0; i<5; i++) {
-				System.out.print("번호 입력하기 >"); int num = scanner.nextInt();
-				System.out.print("이름 입력하기 >"); String name = scanner.next();
-				System.out.print("국어 성적 입력하기 >"); int kor = scanner.nextInt();
-				System.out.print("영어 성적 입력하기 >"); int eng = scanner.nextInt();
-				System.out.print("수학 성적 입력하기 >"); int math = scanner.nextInt();
-				Students stu = new Students(num, name, kor, eng, math);
-				if(studentList.equals(null)) {
-						for(Students c : studentList) {
+			System.out.println("1. 입력하기 2. 성적 출력 3. 초기화 4. 종료"); int ch = scanner.nextInt();
+				if(ch == 1 ) {
+					try{
+						for(int i =0; i<5; i++) {
+							System.out.println("---------------------------");
+							System.out.print((i+1)+"번째 학생 번호 입력하기 > "); int num = scanner.nextInt();
+							System.out.print("이름 입력하기 > "); String name = scanner.next();
+							System.out.print("국어 성적 입력하기 > "); int kor = scanner.nextInt();
+							System.out.print("영어 성적 입력하기 > "); int eng = scanner.nextInt();
+							System.out.print("수학 성적 입력하기 > "); int math = scanner.nextInt();
+							Students students = new Students(num, name, kor, eng, math);
 							
-						}
+							//총점
+							int sum = (kor+eng+math);
+							students.setTotal(sum);
+							//평균
+							double sum2 = ((kor+eng+math)/3);
+							double average = Math.round((sum2*100)/100.00);
+							students.setAve(average);
+							
+							studentList.add(students);
+							//for문 안들어감 arraylist라서
+							}
+					}//try end
+					catch(Exception e) {System.out.println("올바른 번호를 다시 입력해주세요. " + e);}
+				}//if1	
+				if(ch==2) {
+							
+						
+							System.out.println("-----------------------------------------------------------");
+							System.out.println("\t\t  성        적       표");
+							System.out.println("-----------------------------------------------------------");
+							System.out.println("번호\t이름\t국어\t영어\t수학\t총점\t평균\t석차");
+							System.out.println("-----------------------------------------------------------");
+					try {
+							Iterator<Students> iterator = studentList.iterator();
+							while(iterator.hasNext()) {
+							for(Students s:studentList) {
+								System.out.println(s.getNum() + "\t" + s.getName()+ "\t" + s.getKor() + "\t" + s.getEng() + "\t" + 
+							s.getMath() + "\t" + s.getTotal() + "\t" + s.getAve()+ "\t"+ s.getRank());
+								}	
+							break;}
+					}catch(Exception e) {
+						System.out.println("성적표에 입력된 내용이 없습니다.");	
+					}
+				}//if2
+				if(ch==3) {
+					
+					for(Students s : studentList) {
+						studentList.removeAll(studentList);
+						System.out.println("초기화 되었습니다.");
+						break;
+						
+					}
 				}
-			}
-			if(ch==2) {
-				System.out.println("[성적출력하기]");
-				if(!studentList.equals(null)) {
-						for(int i = 0; i<5; i++) {
-							System.out.println(studentList.get(i));
-						}	
+				if(ch==4) {
+					System.out.println("프로그램 종료.");
+					flag = false;
+					break;
 				}
-				System.out.println();
-			}
-			}
+			}catch (Exception e) {System.out.println("오류가 발생했습니다. [" + e +"]" ); }
+		
 		}//while end
 	}//main end
 }//class end
