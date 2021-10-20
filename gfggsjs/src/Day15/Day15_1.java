@@ -47,6 +47,21 @@ public class Day15_1 {
 				
 			//3. Map : 키-값 한쌍으로 저장 //
 				//1)HashMap 2) Hashtable 3) TreeMap 4) Properties
+					//a) map명.put(키, 값) : 키와 값으로 이루어진 엔트리 추가
+					//b) map명.contains(키) : 키의 존재 여부 확인
+					//c) map명.containsValue(값) : 값의 존재 여부 확인
+					//d) map명.entrySet() : 해당 엔트리 set에 저장
+					//e) map명.get (키) : 해당 키의 값을 호출
+					//f) map명.isEmpty() : map이 비어 있는지 확인
+					//g) map명.Keyset() : 해당 키를 set에 저장
+					//h) map명.size() : map내 키의 수
+					//i) 
+				//2) 차이
+						// HashMap : 단일스레드 [ 동기화X ]
+						// Hashtable : 멀티스레드 [ 동기화O ]
+	
+	
+	
 	public static void main(String[] args) {
 		//p.729
 		//자바 동기화 : 스레드들이 동시에 들어오지 않도록 waiting시킴

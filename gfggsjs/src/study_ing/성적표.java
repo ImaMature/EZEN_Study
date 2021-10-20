@@ -13,8 +13,9 @@ public class 성적표 {
 	 * 6. 입력 오류에 대해 예외발생 상황에 대한 처리하기
 	 */
 	public static Scanner scanner = new Scanner(System.in);
-	static ArrayList<Students> studentList = new ArrayList<>();	
+		
 	public static void main(String[] args) {
+	ArrayList<Students> studentList = new ArrayList<>();
 
 		while(true) {
 			System.out.println("-------성적표 프로그램 입니다.-------");
