@@ -21,16 +21,17 @@ public class 성적표 {
 			System.out.println("-------성적표 프로그램 입니다.-------");
 			System.out.println("1. 입력하기 2. 성적 출력 3. 종료"); int ch = scanner.nextInt();
 			if(ch == 1 ) {
-				Students stu = new Students();
+				
+				boolean flag = true;
+				for(int i =0; i<5; i++) {
 				System.out.print("번호 입력하기 >"); int num = scanner.nextInt();
 				System.out.print("이름 입력하기 >"); String name = scanner.next();
 				System.out.print("국어 성적 입력하기 >"); int kor = scanner.nextInt();
 				System.out.print("영어 성적 입력하기 >"); int eng = scanner.nextInt();
 				System.out.print("수학 성적 입력하기 >"); int math = scanner.nextInt();
-				
-				stu= stu
+				Students stu = new Students(num, name, kor, eng, math);
 				if(studentList.equals(null)) {
-						for(int i = 0; i<5; i++) {
+						for(Students c : studentList) {
 							
 						}
 				}
@@ -40,12 +41,11 @@ public class 성적표 {
 				if(!studentList.equals(null)) {
 						for(int i = 0; i<5; i++) {
 							System.out.println(studentList.get(i));
-						}
-						
+						}	
 				}
 				System.out.println();
 			}
-			
+			}
 		}//while end
 	}//main end
 }//class end
