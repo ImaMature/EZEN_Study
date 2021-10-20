@@ -34,6 +34,17 @@ public class Day15_1 {
 	
 			//2. Set : 순서를 유지하지 않고 저장 // 중복 저장 불가
 				//1) HashSet 2) TreeSet
+					//a) set명.add(객체명) : 해당 객체를 set에 저장
+					//b) set명.contains(객체명) : 해당 객체가 set에 존재하는지 여부 확인 (true, false)
+					//c) set명.isEmpty() : set가 비어 있는지 확인 (true, false)
+					//**d) set명.iterator() : 저장된 객체를 하나씩 가져오는 반복자 리턴
+							//d-1) hashNext() : 다음 객체가 존재하면 true, 없으면 false
+							//d-2) next() : 객체 가져오기 
+							//d-3) remove() : 객체 삭제
+					//e) set명.size() : set내 객체 수
+					//f) set명.clear() : set 초기화
+					//g) set명.remove(객체) : 해당 인덱스 객체 삭제
+				
 			//3. Map : 키-값 한쌍으로 저장 //
 				//1)HashMap 2) Hashtable 3) TreeMap 4) Properties
 	public static void main(String[] args) {
