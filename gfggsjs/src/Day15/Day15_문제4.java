@@ -32,7 +32,8 @@ public class Day15_문제4 {
 
 			// 꺼내기
 		for ( int i =0; i<input.length(); i++) {
-			System.out.print(alphabet.pop());
+			System.out.print(alphabet.pop()); // 앞에서부터 입력한 문자열 길이만큼 나옴
+			// pop  은행에서 쓰는 동전케이스에서 동전 빼는거 생각하면됨
 		}
 		
 	}

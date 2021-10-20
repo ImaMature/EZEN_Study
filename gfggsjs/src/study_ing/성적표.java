@@ -19,18 +19,32 @@ public class 성적표 {
 
 		while(true) {
 			System.out.println("-------성적표 프로그램 입니다.-------");
-			System.out.println("1. 입력하기 2. 종료"); int ch = scanner.nextInt();
+			System.out.println("1. 입력하기 2. 성적 출력 3. 종료"); int ch = scanner.nextInt();
 			if(ch == 1 ) {
-			System.out.print("번호 입력하기 >"); int num = scanner.nextInt();
-			System.out.print("이름 입력하기 >"); String name = scanner.next();
-			System.out.print("국어 성적 입력하기 >"); int kor = scanner.nextInt();
-			System.out.print("영어 성적 입력하기 >"); int eng = scanner.nextInt();
-			System.out.print("수학 성적 입력하기 >"); int math = scanner.nextInt();
-			
-			Students students = new Students(num, name, kor, eng, math);
-			studentList.add(students);
+				Students stu = new Students();
+				System.out.print("번호 입력하기 >"); int num = scanner.nextInt();
+				System.out.print("이름 입력하기 >"); String name = scanner.next();
+				System.out.print("국어 성적 입력하기 >"); int kor = scanner.nextInt();
+				System.out.print("영어 성적 입력하기 >"); int eng = scanner.nextInt();
+				System.out.print("수학 성적 입력하기 >"); int math = scanner.nextInt();
+				
+				stu= stu
+				if(studentList.equals(null)) {
+						for(int i = 0; i<5; i++) {
+							
+						}
+				}
 			}
-			
+			if(ch==2) {
+				System.out.println("[성적출력하기]");
+				if(!studentList.equals(null)) {
+						for(int i = 0; i<5; i++) {
+							System.out.println(studentList.get(i));
+						}
+						
+				}
+				System.out.println();
+			}
 			
 		}//while end
 	}//main end

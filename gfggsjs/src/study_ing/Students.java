@@ -2,7 +2,7 @@ package study_ing;
 
 
 
-public class Students {
+public class Students extends ¼ºÀûÇ¥{
 
 	int num;
 	String name;
