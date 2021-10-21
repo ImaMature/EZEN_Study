@@ -68,6 +68,7 @@ public class 성적표 {
 							System.out.println("번호\t이름\t국어\t영어\t수학\t총점\t평균\t석차");
 							System.out.println("-----------------------------------------------------------");
 					try {
+							//Iterator 말고 Comparator써보기?
 							Iterator<Students> iterator = studentList.iterator();
 							
 							while(iterator.hasNext()) {
