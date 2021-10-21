@@ -43,6 +43,11 @@ public class 성적표 {
 							//총점
 							int sum = (kor+eng+math);
 							students.setTotal(sum);
+							int sw = 1;
+							for(Students c : studentList) {
+								sw++;
+								students.setRank(sw);}
+							
 							//평균
 							double sum2 = ((kor+eng+math)/3);
 							double average = Math.round((sum2*100)/100.00);
@@ -56,7 +61,7 @@ public class 성적표 {
 				}//if1	
 				if(ch==2) {
 							
-						
+							
 							System.out.println("-----------------------------------------------------------");
 							System.out.println("\t\t  성        적       표");
 							System.out.println("-----------------------------------------------------------");
@@ -64,11 +69,11 @@ public class 성적표 {
 							System.out.println("-----------------------------------------------------------");
 					try {
 							Iterator<Students> iterator = studentList.iterator();
+							
 							while(iterator.hasNext()) {
 							for(Students s:studentList) {
 								System.out.println(s.getNum() + "\t" + s.getName()+ "\t" + s.getKor() + "\t" + s.getEng() + "\t" + 
-							s.getMath() + "\t" + s.getTotal() + "\t" + s.getAve()+ "\t"+ s.getRank());
-								}	
+							s.getMath() + "\t" + s.getTotal() + "\t" + s.getAve() + "\t" + s.getRank());}	
 							break;}
 					}catch(Exception e) {
 						System.out.println("성적표에 입력된 내용이 없습니다.");	
