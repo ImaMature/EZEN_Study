@@ -19,7 +19,7 @@ public class ReportCard {
 	ArrayList<Students> array = new ArrayList<>();
 		
 		while(true) {
-		
+		try {
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("1. 등록 | 2. 출력"); int ch = scanner.nextInt();
 			if(ch==1) {
@@ -54,7 +54,7 @@ public class ReportCard {
 				}
 				
 				}
-				
+		}catch(Exception e) {System.out.println("잘못된 입력입니다. 관리자한테 가서 따지세요.");}
 				
 				
 				
