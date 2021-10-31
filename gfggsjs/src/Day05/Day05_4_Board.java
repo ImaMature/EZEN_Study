@@ -101,7 +101,8 @@ public class Day05_4_Board { // 안보고 짜야 게시판 작성 가능 -> 배열,반복문 이해
 						
 						//해당 게시물의 조회수 1 증가
 					int count = Integer.parseInt(boards[ch2][4]);	//[조회수(String) -> int 변환]
-					count++;	boards[ch2][4] = count+""; 	//=(boards[ch2][4] = Integer.toString(++count); (조회수 증가후 -> String 변환)
+					//count++;	boards[ch2][4] = count+""; 	
+					boards[ch2][4] = Integer.toString(++count); //(조회수 증가후 -> String 변환)
 						
 					System.out.println("----------------------------- 게시물 상세페이지 -------------------------------");
 					System.out.println(" >>> 제목 : " + boards[ch2][0]);
