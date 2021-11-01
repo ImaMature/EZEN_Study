@@ -10,7 +10,6 @@ public class Board2 {
 	public static void main(String[] args) {
 		
 		Database [] array = new Database[100];
-		int view = 0; // 조회수
 		
 		while(true) {
 			Scanner scanner = new Scanner(System.in);
@@ -38,6 +37,7 @@ public class Board2 {
 						Date date = new Date();
 						SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd");
 						String strDate = dateFormat.format(date);
+						int view = 0; // 조회수
 
 						Database data = new Database(title, contents, writer, strDate, view);
 						
