@@ -60,7 +60,7 @@ public class Board2 {
 								System.out.println("==============================================================");
 								System.out.println(">>제목 : " + array[ch3].getTitle());
 								System.out.println(">>작성자 : " + array[ch3].getWriter() + "\t작성일 : " + array[ch3].date + "\t조회수 : " + array[ch3].viewCount);
-								System.out.println(">>내용 : " + array[ch3].getContents()); // get을 쓰는 이유
+								System.out.println(">>내용 : " + array[ch3].getContents()); // get을 쓰는 이유 private 필드 객체때문에
 							}
 							else if (ch2 == 2) {
 								break;
