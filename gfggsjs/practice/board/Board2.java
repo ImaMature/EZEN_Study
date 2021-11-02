@@ -10,6 +10,7 @@ public class Board2 {
 	public static void main(String[] args) {
 		
 		Database [] array = new Database[100];
+		int view = 0; // 조회수
 		
 		while(true) {
 			Scanner scanner = new Scanner(System.in);
@@ -37,7 +38,6 @@ public class Board2 {
 						Date date = new Date();
 						SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd");
 						String strDate = dateFormat.format(date);
-						int view = 0; // 조회수
 
 						Database data = new Database(title, contents, writer, strDate, view);
 						
@@ -60,7 +60,7 @@ public class Board2 {
 								System.out.println("==============================================================");
 								System.out.println(">>제목 : " + array[ch3].getTitle());
 								System.out.println(">>작성자 : " + array[ch3].getWriter() + "\t작성일 : " + array[ch3].date + "\t조회수 : " + array[ch3].viewCount);
-								System.out.println(">>내용 : " + array[ch3].getContents()); // get을 쓰는 이유 private 필드 객체때문에
+								System.out.println(">>내용 : " + array[ch3].getContents()); // get을 쓰는 이유
 							}
 							else if (ch2 == 2) {
 								break;
