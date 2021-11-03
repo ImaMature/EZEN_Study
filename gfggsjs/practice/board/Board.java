@@ -92,7 +92,6 @@ public class Board {
 						break;
 					}
 				}
-				
 			}
 			
 			if(ch == 2) {
@@ -120,9 +119,7 @@ public class Board {
 					}
 					
 				}
-				
 			}
-			
 		}//while end
 	}//main end
 }//class end

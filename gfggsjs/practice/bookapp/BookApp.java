@@ -30,11 +30,11 @@ public class BookApp {
 			
 				while(true) {
 				try{
-					Scanner scanner = new Scanner(System.in);
+					BookApp.sc = new Scanner(System.in);
 					System.out.println("----------------회원제 도서관 프로그램-----------------");
 					System.out.println("1. 로그인 | 2. 회원가입 | 3. 아이디찾기 | 4. 비밀번호찾기");
 					System.out.println("------------------------------------------------");
-					int ch = scanner.nextInt();
+					int ch = sc.nextInt();
 					if(ch == 1) {
 						member.login();
 					}
