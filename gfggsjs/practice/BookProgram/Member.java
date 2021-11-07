@@ -33,73 +33,90 @@ public class Member {
 	
 	//로그인 메소드
 	public void login() {
-		System.out.println("------------------ 로그인 페이지 -----------------");
-		System.out.print("아이디 입력 : ");		String id = BookApp.sc.next();
-		System.out.print("비밀번호 입력 : ");		String pw = BookApp.sc.next();
-			if(id.equals("admin") && pw.equals("1234") ) {
-				System.out.println("[관리자 로그인 완료]");
-				adminlogin();
-				return;
-			}
-		Member member = new Member(id, pw);
-		for(int i =0; i<BookApp.m_arr.length; i++) {
-			if(BookApp.m_arr[i] != null && 
-				BookApp.m_arr[i].getM_id().equals(id) && 
-				BookApp.m_arr[i].getM_pw().equals(pw)) {
-				BookApp.m_arr[i] = member;
-				System.out.println("[로그인 완료]");
-				loginok();
-				return;
-			}else {
-				System.out.println("[로그인 실패] 해당 정보가 없습니다.");
-				return;
+		while(true) {
+			try {
+				System.out.println("------------------ 로그인 페이지 -----------------");
+				System.out.print("아이디 입력 : ");		String id = BookApp.sc.next();
+				System.out.print("비밀번호 입력 : ");		String pw = BookApp.sc.next();
+					if(id.equals("admin") && pw.equals("1234") ) {
+						System.out.println("[관리자 로그인 완료]");
+						adminlogin();
+						return;
+					}
+				Member member = new Member(id, pw);
+				for(int i =0; i<BookApp.m_arr.length; i++) {
+					if(BookApp.m_arr[i] != null && 
+						BookApp.m_arr[i].getM_id().equals(id) && 
+						BookApp.m_arr[i].getM_pw().equals(pw)) {
+						BookApp.m_arr[i] = member;
+						System.out.println("[로그인 완료]");
+						loginok(id);
+						return;
+					}else if(BookApp.m_arr[i] == null && !BookApp.m_arr[i].getM_id().equals(id) &&
+							!BookApp.m_arr[i].getM_pw().equals(pw)) { 
+						System.out.println("[로그인 실패] 해당 정보가 없습니다.");
+						return;
+					}
+				}
+			}catch(Exception e) {
+				System.out.println("로그인 오류" + e.getMessage());
+				break;
 			}
 		}
-		
 	}
 	
 	//일반 회원으로 로그인 시의 메소드
-	private void loginok() {
+	private void loginok(String m_id) {
 		while(true) {
-			Book book = new Book();
-			System.out.println("--------------------------------------------");
-			System.out.println("1. 도서목록 | 2. 도서대여 | 3. 도서반납 | 4. 로그아웃");
-			System.out.println("--------------------------------------------");
-			int ch2 = BookApp.sc.nextInt();
-			if(ch2 == 1) {
-				System.out.println("[도서목록 페이지입니다.]");
-				book.booklist();
-			}else if(ch2 == 2) {
-				System.out.println("[도서대여 페이지입니다.]");
-				book.bookrent();
-			}else if(ch2 == 3) {
-				System.out.println("[도서반납 페이지입니다.]");
-				book.bookreturn();
-			}else if(ch2 == 4) {
-				System.out.println("로그아웃");
+			try {
+				Book book = new Book();
+				System.out.println("--------------------------------------------");
+				System.out.println("1. 도서목록 | 2. 도서대여 | 3. 도서반납 | 4. 로그아웃");
+				System.out.println("--------------------------------------------");
+				int ch2 = BookApp.sc.nextInt();
+				if(ch2 == 1) {
+					System.out.println("[도서목록 페이지입니다.]");
+					book.booklist();
+				}else if(ch2 == 2) {
+					System.out.println("[도서대여 페이지입니다.]");
+					book.bookrent(m_id);
+				}else if(ch2 == 3) {
+					System.out.println("[도서반납 페이지입니다.]");
+					book.bookreturn();
+				}else if(ch2 == 4) {
+					System.out.println("로그아웃"); //첫번째 회원가입후 로그인하고 로그아웃한뒤 다른아이디로 회원가입후 그 다른 아이디로 로그인하면 로그인실패 처음 회원가입한건 로그인 성공 
+					return;
+				}else { System.out.println("잘못된 숫자를 입력하셨습니다. (1 ~ 4 사이의 숫자를 입력해주세요.)");}
+			}catch(Exception e) {
+				System.out.println("일반회원 로그인 오류" + e.getMessage());
 				break;
-			}else { System.out.println("잘못된 숫자를 입력하셨습니다. (1 ~ 4 사이의 숫자를 입력해주세요.)");}
-		}	
+			}
+		}
 	}
 	
 	//관리자 (admin)으로 로그인 시의 메소드
 	private void adminlogin() {
 		while(true) {
-			Book book = new Book();
-			System.out.println("--------------------------------------------");
-			System.out.println("1. 도서등록| 2. 도서목록 | 3. 로그아웃");
-			System.out.println("--------------------------------------------");
-			int adminCh = BookApp.sc.nextInt();
-				if(adminCh == 1) {
-					System.out.println("[도서등록 페이지입니다.]");
-					book.bookreg();
-				}else if (adminCh == 2) {
-					System.out.println("[도서목록 페이지입니다.]");
-					book.booklist();
-				}else if (adminCh == 3) {
-					System.out.println("[관리자 로그아웃]");
-					break;
-				}else {System.out.println("잘못된 숫자를 입력하셨습니다. (1 ~ 3 사이의 숫자를 입력해주세요.)");}
+			try {
+				Book book = new Book();
+				System.out.println("--------------------------------------------");
+				System.out.println("1. 도서등록| 2. 도서목록 | 3. 로그아웃");
+				System.out.println("--------------------------------------------");
+				int adminCh = BookApp.sc.nextInt();
+					if(adminCh == 1) {
+						System.out.println("[도서등록 페이지입니다.]");
+						book.bookreg();
+					}else if (adminCh == 2) {
+						System.out.println("[도서목록 페이지입니다.]");
+						book.booklist();
+					}else if (adminCh == 3) {
+						System.out.println("[관리자 로그아웃]");
+						break;
+					}else {System.out.println("잘못된 숫자를 입력하셨습니다. (1 ~ 3 사이의 숫자를 입력해주세요.)");}
+			}catch(Exception e) {
+				System.out.println("관리자 로그인 오류" + e.getMessage());
+				break;
+			}
 		}
 	}
 
