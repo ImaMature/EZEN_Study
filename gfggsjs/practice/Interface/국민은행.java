@@ -1,36 +1,14 @@
 package Interface;
 
-public class 국민은행 implements ATM{
-
-	@Override
-	public ATM 계좌등록() {
-		System.out.println("국민은행 계좌등록");
-		return null;
-	}
-
-	@Override
-	public ATM 계좌이체() {
-		System.out.println("국민은행 계좌이체");
-		return null;
-	}
-
-	@Override
-	public ATM 예금() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ATM 출금() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ATM 계좌잔고() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public class 국민은행 extends 은행{
+	//은행(구현) 클래스를 상속, ATM에 있는 메소드도 사용가능.
 
 	
+  
+	@Override
+	public void 계좌등록() {
+		System.out.println("국민은행 계좌등록");
+		
+		
+	}
 }
