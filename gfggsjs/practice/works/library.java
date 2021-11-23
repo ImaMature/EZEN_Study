@@ -69,7 +69,7 @@ public class library {
 					ch = System.in.read(a);// 바이트배열에서 입력받아 ch에 저장
 					//4번을 입력하면 인덱스는 3 그런데 ch-1을 하면 null값이 뜹니다.
 					String str = new String (a,0,ch-2); //int로 형변환을 하기 위해서 String화 했습니다.
-//					System.out.println(str);
+					System.out.println(str);
 					int strCh3 = Integer.parseInt(str); //입력받은 도서를 int로 형변환
 					//수정할 문자 입력받기
 					System.out.println("기존 도서명 중 수정을 원하는 문구를 입력해 주십시오. : ");
