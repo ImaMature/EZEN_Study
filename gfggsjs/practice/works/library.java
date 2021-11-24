@@ -79,12 +79,12 @@ public class library {
 					System.out.println("새로 바꿀 문구를 입력해 주십시오. : ");
 					int txt2 = System.in.read(a); // 새로 바꿀 문자를 입력받습니다.
 					String replacetxt = new String(a,0,txt2-2);
-					String rs = 도서목록[strCh3-1].replace(origintxt, replacetxt); 
+					도서목록[strCh3-1] = 도서목록[strCh3-1].replace(origintxt, replacetxt); 
 					// 입력받은 번호 인덱스의 텍스트를 치환합니다. 도서 검색 결과는 인덱스+1번이라 인덱스-1을 해주었습니다.
-					System.out.println(rs.toString());	//주소값이 나올까봐 tostring으로 값을 String화 했습니다.
+//					System.out.println(rs.toString());	//주소값이 나올까봐 tostring으로 값을 String화 했습니다.
 //					System.out.println(strCh3);
 //					System.out.println(도서목록[strCh3]);
-					도서목록[strCh3-1] = rs;
+//					도서목록[strCh3-1] = rs;
 					
 				}
 			} catch (Exception e) { //예외처리
