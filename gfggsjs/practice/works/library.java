@@ -43,7 +43,7 @@ public class library {
 				byte [] a = new byte [50]; // 바이트 배열 선언 25자까지 입력가능합니다.
 //				int ch = System.in.read(1);  //system.in.read()는 문자열을 받아주는 메소드, 그래서 read(1)이 될 수 없습니다.
 //				int ch = System.in.read(); // 49 = 아스키코드가 나와서 int형으로 저장해야합니다.
-				int ch = System.in.read(a); //입력객체 선언 50바이트까지 입력 가능 그값을 ch에 저장했습니다.
+				int ch = System.in.read(a); //입력객체 선언 50바이트까지 입력 가능 그값을 바이트 배열에 저장하고 동시에 값을 읽어와 ch에 저장했습니다.
 				String strCh = new String(a,0,ch-2); //String값으로 바꿔줍니다. 바이트 배열만큼, 0번째 인덱스, /r과 /n을 빼야되기 때문에 ch-2를 해야합니다.
 //				System.out.println(strCh); // strCh값 확인하는 문단. //입력한 값 그대로 나옵니다.
 //				break;//반복해제할려고 임시로 선언한 겁니다. 지워도 무방합니다.
@@ -84,6 +84,7 @@ public class library {
 					System.out.println(rs.toString());	//주소값이 나올까봐 tostring으로 값을 String화 했습니다.
 //					System.out.println(strCh3);
 //					System.out.println(도서목록[strCh3]);
+					도서목록[strCh3-1] = rs;
 					
 				}
 			} catch (Exception e) { //예외처리
