@@ -1,0 +1,4 @@
+Main Class는 Day10_1
+
+Line 20 : printSound 메소드 실행 ->  printSound 실행 -> Soundable클래스의 sound에서 new Cat 생성자 인수로 받아 -> Cat클래스의 sound실행 -> 야옹 출력
+Line 21 : printSound 메소드 실행 ->  printSound 실행 -> Soundable클래스의 sound에서 new Dog 생성자 인수로 받아 -> Dog클래스의 sound실행 -> 멍멍 출력
