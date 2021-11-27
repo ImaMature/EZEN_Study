@@ -31,29 +31,40 @@ public class MyCalender {
 							calendar.set(year, month-1, 1); 
 							//calendar객체에 입력받은 연도, 입력받은 달, 날짜 설정하기 
 							//달은 -1을 해줘야함 0부터 나오기 때문
+							//1이라고 설정한 이유? 달력은 1일 부터 시작하니까?
 														
-							int weekday = calendar.get(Calendar.DAY_OF_WEEK); 
+							int firstday = calendar.get(Calendar.DAY_OF_WEEK); 
 							//입력받은 날(calendar객체)의 월의 요일을 가져와서 객체화
-							//인덱스 값이 나온다. ex) 일요일: 1, 월요일 : 2, 화요일 : 3...
+							//DAY_OF_WEEK : 특정 요일을 알기 위한 상수(1~7)
+							//예시) 일요일: 1, 월요일 : 2, 화요일 : 3...
+							//해당 연도, 해당 월의 첫날의 요일 구하기
+							
 							
 							int endday = calendar.getActualMaximum(calendar.DAY_OF_MONTH);
-							//입력받은 날의 최댓값 구하기.
+							//입력받은 날의 최댓값(끝날) 구하기.
 							
 							System.out.println( "\t\t"+year+"년 " + month  + "월" );
 							System.out.println("=================================================");
 							System.out.println("일\t월\t화\t수\t목\t금\t토");
 							
-							for(int i = 0; i<weekday; i++){
-							
-								System.out.print(" \t");
+							//첫날의 위치 앞에 \t붙여서 간격 맞추기
+							for(int i = 1; i<firstday; i++){ //첫날이 /t 되지않도록 초과로 설정 
+								System.out.print("\t");
 							}		
 							
-							for(int i =0; i<=endday; i++) {
+							//마지막날까지 반복문 돌림
+							//i가 1부터 시작해야 1부터 나옴
+							for(int i =1; i<=endday; i++) {
 								System.out.print(i+"\t");
-								if(weekday % 7 == 0) {
-									System.out.println();
-									weekday++;
-								}
+								//날짜들 사이에 간격을 주기 위해 i뒤에 \t를 붙임
+								
+								//요일을 7로 나눴을 때 0 = 토요일(7) 이라면 뒤에 개행추가
+								if(firstday % 7 == 0)   
+								//?????????if뒤 중괄호를 빼주니까 제대로 달력이 나옴 이유가 뭔지????
+									//if안의 실행문이 단순하다면 생략해도 안해도 상관없는거 아니었나....
+									System.out.println("\n");
+									firstday++;
+								
 							}
 							
 							break;

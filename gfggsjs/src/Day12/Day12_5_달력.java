@@ -54,7 +54,7 @@ public class Day12_5_달력 {
 					//요일이 토요일마다 줄바꿈 [sweek가 7의 배수 마다]
 					System.out.println();
 					sweek++; //요일 증가
-			
+				
 		}
 		
 			
