@@ -72,7 +72,7 @@ public class 회원목록_멤버 {
 					
 					// 파일 출력 객체
 						FileOutputStream fileOutputStream = 
-								new FileOutputStream("C:/Users/505/git/EZEN_Study/gfggsjs/src/Day12/memberlist.txt", true); //true 이어쓰기																
+								new FileOutputStream("C:/Users/JHD/git/EZEN_Study/gfggsjs/src/Day12/memberlist.txt", true); //true 이어쓰기																
 						//3-3-d-2) 객체 내보내기 [ 필드 구분 ]
 						String outstring = (member.id+","+member.pw+","+member.name+","+member.phone+"\n"); //꼭 끝에 "\n" 쓰기 
 						fileOutputStream.write(outstring.getBytes()); // 바이트 변환후 쓰기

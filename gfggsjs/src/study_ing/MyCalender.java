@@ -1,4 +1,4 @@
-package study_ing.calender;
+package study_ing;
 
 import java.util.Calendar;
 import java.util.Scanner;
