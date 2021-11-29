@@ -7,11 +7,11 @@ public class Calculator {
 	
 	//생성자
 	
-	//메소드
 	public int getMemory() {
 		return memory;
 	}
 	
+	//메소드
 	public synchronized void setMemory(int memory) { //public synchronized void가 안들어가면 동시에 50이 나옴
 			//	동기화 : 우선 스레드가 끝날 때까지 다른 스레드 대기 [ 순서대기 ]
 		this.memory = memory;

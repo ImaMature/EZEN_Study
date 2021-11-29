@@ -60,13 +60,11 @@ public class MyCalender {
 								
 								//요일을 7로 나눴을 때 0 = 토요일(7) 이라면 뒤에 개행추가
 								if(firstday % 7 == 0)   
-								//?????????if뒤 중괄호를 빼주니까 제대로 달력이 나옴 이유가 뭔지????
-									//if안의 실행문이 단순하다면 생략해도 안해도 상관없는거 아니었나....
-									System.out.println("\n");
-									firstday++;
 								
+									{System.out.println("\n");}
+									firstday++;
+									//firstday % 7==0 이 아니라면 firstday가 1씩 증가
 							}
-							
 							break;
 						}
 				}//while2 end

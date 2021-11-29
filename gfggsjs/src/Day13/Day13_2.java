@@ -7,7 +7,7 @@ public class Day13_2 {
 		//p.590
 		
 		//1. 10개의 멀티스레드 생성
-		for(int i = 1; i<10; i++) {
+		for(int i = 1; i<=10; i++) {
 		
 			//2. 멀티스레드 생성 [ 이름 부여 ]
 			Thread thread = new CalcThread("스레드" + i);
@@ -22,6 +22,7 @@ public class Day13_2 {
 			//4.스레드 시작
 			thread.start(); //start가 있어야 int = 0 반복문 가능
 		}
+		//p.592
 		//스레드 메소드 동기화
 			// 동기화는 : 여러 스레드가 동일한 메소드에 접근할 때 먼저 접근한 메소드부터 처리
 			//			나머지는 대기
