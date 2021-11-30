@@ -13,6 +13,8 @@ public class Calculator {
 	public synchronized void setMemory(int memory) {
 		this.memory = memory;
 		//동기화 : 우선 스레드가 끝날 때까지 다른 스레드는 대기합니다.
+		//두 가지 이상의 값이 동시에 들어올 경우를 대비해서
+		//한 가지를 먼저 실행시키고 나머지를 나중에 실행시킨다.
 		//User1과 User가 이곳을 오버라이딩 합니다.
 		try {
 			Thread.sleep(2000);
