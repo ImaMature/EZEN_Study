@@ -17,7 +17,8 @@ public class Calculator_Main {
 		if(i!=10) { //i가 10이 아니라면
 			thread.setPriority(Thread.MIN_PRIORITY);
 			//가장 낮은 순위로 설정
-			
+			//쓰레드는 운영체제에서 실행되기 때문에 사용자가 임의대로 건들수는 없다.
+			//그래도 약간이나마 낮은 순위나 높은 순위로 설정할 수 있다.
 		}else {
 			thread.setPriority(Thread.MAX_PRIORITY);
 			//10이라면 가장 높은 순위로 설정
@@ -35,5 +36,7 @@ public class Calculator_Main {
 		//user2 클래스의 생성자에 calculator를 매개변수로 전달
 		//이름이 user2가 됩니다.
 		user2.start();
+		
+		
 	}
 }
