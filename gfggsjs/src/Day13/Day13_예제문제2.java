@@ -2,7 +2,7 @@ package Day13;
 
 import java.util.Scanner;
 
-public class player {
+public class Day13_예제문제2 {
 
 //	문제2 무한루프 메뉴
 //
